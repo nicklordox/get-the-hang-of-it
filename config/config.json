@@ -1,0 +1,23 @@
+{
+    "max_dim": 1200,
+    "guitar_image_path": "config/fmt_hh.jpg",
+    "marker_colour": "blue",
+    "marker_font": "Arial",
+    "marker_font_colour": "white",
+    "marker_font_size": 16,
+    "marker_size": 30,
+    "B1_init_pixel_coords": [
+        11,
+        195
+    ],
+    "COM_init_pixel_coords": [
+        387,
+        195
+    ],
+    "B2_init_pixel_coords": [
+        515,
+        92
+    ],
+    "init_real_to_pixel_dist_ratio": 0.0933094870227348,
+    "init_strap_length": 110.0
+}
