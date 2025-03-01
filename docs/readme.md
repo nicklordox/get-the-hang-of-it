@@ -319,8 +319,8 @@ assumptions, beyond assuming that the Newtonian model of physics works well enou
 
 The three equations used to derive the expressions for the unknowns $l$, $\theta_g$ and $theta_s$ are 
 ```math
-g_1 \cos(\theta_g) = l \cos(\theta_s)
-g_2 \cos(\pi - (\theta_{COM} \theta_g)) = (L-l) \cos(\theta_s)
+g_1 \cos(\theta_g) = l \cos(\theta_s) \\
+g_2 \cos(\pi - (\theta_{COM} \theta_g)) = (L-l) \cos(\theta_s) \\
 g_1^2 + g_2^2 - 2 g_1 g_2 \cos(\theta_{COM}) = (2 l L - 2l^2)(\cos(2\theta_s) - 1) + L^2
 ```
 which are taken directly from the above constraints, after applying a little basic trigonometry to assign values to 
@@ -330,23 +330,23 @@ equation equates the distance between $B_1$ and $B_2$ as calculated from the tri
 
 Rearrangement of these expressions yields the following quartic in $l$:
 ```math
-C_4 l^4 + C_3 l^3 + C_2 l^2 + C_1 l + C_0 = 0
-C_4 = -4(1 + A^2 - 2AB + B^2)
-C_3 = 4L(1 + 3A^2 - 4AB + B^2)
-C_2 = (g_3^2 - L^2)(1 + A^2 - 2AB + B^2) + 4L(2ABL - 3LA^2) + 4 g_1^2
-C_1 = 4L(A^2 L^2 - g_1^2) + 2AL(g_3^2 - L^2)(B - A)
-C_0 = (g_3^2 - L^2) A^2 L^2
-A = \csc(\theta_{COM}) g_1 / g_2
-B = \cot(\theta_{COM})
+C_4 l^4 + C_3 l^3 + C_2 l^2 + C_1 l + C_0 = 0 \\
+C_4 = -4(1 + A^2 - 2AB + B^2) \\
+C_3 = 4L(1 + 3A^2 - 4AB + B^2) \\
+C_2 = (g_3^2 - L^2)(1 + A^2 - 2AB + B^2) + 4L(2ABL - 3LA^2) + 4 g_1^2 \\
+C_1 = 4L(A^2 L^2 - g_1^2) + 2AL(g_3^2 - L^2)(B - A) \\
+C_0 = (g_3^2 - L^2) A^2 L^2 \\
+A = \csc(\theta_{COM}) \frac{g_1}{g_2} \\
+B = \cot(\theta_{COM}) \\
 g_3^2 = g_1^2 + g_2^2 - 2 g_1 g_2 \cos(\theta_{COM})
 ```
 where the $\theta_g$ corresponding to any given solution for $l$ in the above can be solved by substitution into
 ```math
-\theta_g = \arctan(A(L/l - 1) + B)
+\theta_g = \arctan(A(\frac{L}{l} - 1) + B)
 ```
 and $\theta_s$, if desired, is given simply by
 ```math
-\theta_s = \arccos(g_1 \cos(\theta_g) / l)
+\theta_s = \arccos(\frac{g_1 \cos(\theta_g)}{l})
 ```
 I will extend mercy to the reader and myself by not writing the derivation out here. The correctness can be checked by 
 feeding the original constraint equations directly to a numeric solver (see below).
@@ -366,12 +366,12 @@ rotation apart from one another: in one, the strap pulls the guitar from above, 
 guitar up from below. After all, we have not yet explicitly imposed a constraint on the *sign* of the tension $T$, 
 so this is to be expected.
 
-To isolate the intended solution, we note that it is the only one of the four above for which $\theta_g \in [-\pi/2, 
-\pi/2]$ and $\theta_s \in [0, \pi/2]$. For the incorrect solution of $l$, the (positive) value of $\theta_s$ 
-returned by the (ambiguous) $\arccos$ function will actually represent the solution with the negative of that value. 
-Thus, it will fail a check on a constraint which involves e.g. the $\sin$ of that angle. So we can use a fourth 
-constraint equation as our final check: this time, it's an identity on the length of the vertical diagonal as 
-calculated from the triangles to its left and right:
+To isolate the intended solution, we note that it is the only one of the four above for which $\theta_g \in 
+[-\frac{\pi}{2}, \frac{\pi}{2}]$ and $\theta_s \in [0, \frac{\pi}{2}]$. For the incorrect solution of $l$, the 
+(positive) value of $\theta_s$ returned by the (ambiguous) $\arccos$ function will actually represent the solution 
+with the negative of that value. Thus, it will fail a check on a constraint which involves e.g. the $\sin$ of that 
+angle. So we can use a fourth constraint equation as our final check: this time, it's an identity on the length of 
+the vertical diagonal as calculated from the triangles to its left and right:
 ```math
 g_1 \sin(\theta_g) + l \sin(\theta_s) = g_2 \sin(\pi - (\theta_{COM} + \theta_g)) + (L - l)\sin(\theta_s)
 ```
