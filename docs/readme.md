@@ -319,9 +319,11 @@ assumptions, beyond assuming that the Newtonian model of physics works well enou
 
 The three equations used to derive the expressions for the unknowns $l$, $\theta_g$ and $theta_s$ are 
 ```math
-g_1 \cos(\theta_g) = l \cos(\theta_s) \\
-g_2 \cos(\pi - (\theta_{COM} \theta_g)) = (L-l) \cos(\theta_s) \\
-g_1^2 + g_2^2 - 2 g_1 g_2 \cos(\theta_{COM}) = (2 l L - 2l^2)(\cos(2\theta_s) - 1) + L^2
+\begin{matrix}
+g_1 \cos(\theta_g) = l \cos(\theta_s) \\ 
+g_2 \cos(\pi - (\theta_{COM} \theta_g)) = (L-l) \cos(\theta_s) \\ 
+g_1^2 + g_2^2 - 2 g_1 g_2 \cos(\theta_{COM}) = (2 l L - 2l^2)(\cos(2\theta_s) - 1) + L^2 
+\end{matrix}
 ```
 which are taken directly from the above constraints, after applying a little basic trigonometry to assign values to 
 some of the other angles in the system diagram. The first two equations are pretty straightforward. The third 
@@ -330,6 +332,7 @@ equation equates the distance between $B_1$ and $B_2$ as calculated from the tri
 
 Rearrangement of these expressions yields the following quartic in $l$:
 ```math
+\begin{matrix}
 C_4 l^4 + C_3 l^3 + C_2 l^2 + C_1 l + C_0 = 0 \\
 C_4 = -4(1 + A^2 - 2AB + B^2) \\
 C_3 = 4L(1 + 3A^2 - 4AB + B^2) \\
@@ -339,10 +342,11 @@ C_0 = (g_3^2 - L^2) A^2 L^2 \\
 A = \csc(\theta_{COM}) \frac{g_1}{g_2} \\
 B = \cot(\theta_{COM}) \\
 g_3^2 = g_1^2 + g_2^2 - 2 g_1 g_2 \cos(\theta_{COM})
+\end{matrix}
 ```
 where the $\theta_g$ corresponding to any given solution for $l$ in the above can be solved by substitution into
 ```math
-\theta_g = \arctan(A(\frac{L}{l} - 1) + B)
+\theta_g = \arctan\left(A\left(\frac{L}{l} - 1\right) + B\right)
 ```
 and $\theta_s$, if desired, is given simply by
 ```math
