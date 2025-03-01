@@ -321,7 +321,7 @@ The three equations used to derive the expressions for the unknowns $l$, $\theta
 ```math
 \begin{matrix}
 g_1 \cos(\theta_g) = l \cos(\theta_s) \\ 
-g_2 \cos(\pi - (\theta_{COM} \theta_g)) = (L-l) \cos(\theta_s) \\ 
+g_2 \cos(\pi - (\theta_{COM} + \theta_g)) = (L-l) \cos(\theta_s) \\ 
 g_1^2 + g_2^2 - 2 g_1 g_2 \cos(\theta_{COM}) = (2 l L - 2l^2)(\cos(2\theta_s) - 1) + L^2 
 \end{matrix}
 ```
@@ -350,7 +350,7 @@ where the $\theta_g$ corresponding to any given solution for $l$ in the above ca
 ```
 and $\theta_s$, if desired, is given simply by
 ```math
-\theta_s = \arccos(\frac{g_1 \cos(\theta_g)}{l})
+\theta_s = \arccos\left(\frac{g_1 \cos(\theta_g)}{l}\right)
 ```
 I will extend mercy to the reader and myself by not writing the derivation out here. The correctness can be checked by 
 feeding the original constraint equations directly to a numeric solver (see below).
