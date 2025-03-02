@@ -9,6 +9,12 @@ import argparse
 from basic_marker import BasicMarker
 from gthoi_solver import gthoi_solver
 
+
+# Workaround for NumPy's annoying deprecation:
+def cross2d(x, y):
+    return x[..., 0] * y[..., 1] - x[..., 1] * y[..., 0]
+
+
 pg.init()
 
 parser = argparse.ArgumentParser()
@@ -195,19 +201,22 @@ while run:
                     v2[1] = -v2[1]
 
                     reference_ax = np.array([-1, 0])
-                    theta_v2_v1 = np.arctan2(np.cross(v2, v1), np.dot(v1, v2))
+                    # theta_v2_v1 = np.arctan2(np.cross(v2, v1), np.dot(v1, v2))
+                    theta_v2_v1 = np.arctan2(cross2d(v2, v1), np.dot(v1, v2))
                     if theta_v2_v1 >= 0:
                         # The vector that will be rotated clockwise to (-1, 0) is v1
                         theta_COM = theta_v2_v1
                         g1 = np.linalg.norm(v1)
                         g2 = np.linalg.norm(v2)
-                        pre_rot = np.arctan2(np.cross(reference_ax, v1), np.dot(v1, reference_ax))
+                        # pre_rot = np.arctan2(np.cross(reference_ax, v1), np.dot(v1, reference_ax))
+                        pre_rot = np.arctan2(cross2d(reference_ax, v1), np.dot(v1, reference_ax))
                     else:
                         # The vector that will be rotated clockwise to (-1, 0) is v2
                         theta_COM = -theta_v2_v1
                         g1 = np.linalg.norm(v2)
                         g2 = np.linalg.norm(v1)
-                        pre_rot = np.arctan2(np.cross(reference_ax, v2), np.dot(v2, reference_ax))
+                        # pre_rot = np.arctan2(np.cross(reference_ax, v2), np.dot(v2, reference_ax))
+                        pre_rot = np.arctan2(cross2d(reference_ax, v2), np.dot(v2, reference_ax))
                     # We'll put everything into "real" units of length, according to the current calibration, such that
                     #   the left-side strap length is returned in units consistent with the representation of the total
                     #   strap length, as you'd expect:
