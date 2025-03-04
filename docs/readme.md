@@ -207,7 +207,7 @@ Now, these are the contents of config.json:
 
 Of course, that was just one quick search, that led to one particular approach. There are other options available, 
 with their own tradeoffs. Play around and get a feel for them. And try it with your own guitar: just copy an image 
-into the project folder, point to it from a new config file, and adjust the parameters as appropriate.
+into the config folder, point to it from a new config file, and adjust the parameters as appropriate.
 
 ## My Motivation for Making This
 
