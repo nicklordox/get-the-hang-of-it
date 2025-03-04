@@ -317,7 +317,7 @@ assumptions, beyond assuming that the Newtonian model of physics works well enou
    magnitude of the force $T$ is the same at both ends, the angles must be the same as well. (The vertical component 
    of the force at each button will then be half of the weight of the guitar.)
 
-The three equations used to derive the expressions for the unknowns $l$, $\theta_g$ and $theta_s$ are 
+The three equations used to derive the expressions for the unknowns $l$, $\theta_g$ and $\theta_s$ are 
 ```math
 \begin{matrix}
 g_1 \cos(\theta_g) = l \cos(\theta_s) \\ 
@@ -371,7 +371,8 @@ guitar up from below. After all, we have not yet explicitly imposed a constraint
 so this is to be expected.
 
 To isolate the intended solution, we note that it is the only one of the four above for which $\theta_g \in 
-[-\frac{\pi}{2}, \frac{\pi}{2}]$ and $\theta_s \in [0, \frac{\pi}{2}]$. For the incorrect solution of $l$, the 
+\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$ and $\theta_s \in \left[0, \frac{\pi}{2}\right]$. For the incorrect solution of $l$, 
+the 
 (positive) value of $\theta_s$ returned by the (ambiguous) $\arccos$ function will actually represent the solution 
 with the negative of that value. Thus, it will fail a check on a constraint which involves e.g. the $\sin$ of that 
 angle. So we can use a fourth constraint equation as our final check: this time, it's an identity on the length of 
